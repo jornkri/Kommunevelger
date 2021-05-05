@@ -1,0 +1,19 @@
+html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+      #messageDiv {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      #akViewDiv {
+        padding: 0;
+        margin: 0;
+        height: 225px;
+        width: 300px;
+        background-color: rgba(255, 255, 255, 0.9);
+      }

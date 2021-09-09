@@ -5,57 +5,117 @@
       name="viewport"
       content="initial-scale=1,maximum-scale=1,user-scalable=no"
     />
-    <title>
-      Kommunevelger
-    </title>
-    
+    <title>Kommunevelger</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       rel="stylesheet"
       href="https://js.arcgis.com/4.19/esri/themes/light/main.css"
     />
 
-    <link 
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+    <link
       rel="stylesheet"
       type="text/css"
-      href="css/main.css" 
+      href="https://js.arcgis.com/calcite-components/1.0.0-beta.52/calcite.css"
     />
-    
   </head>
-    
-  <body>
 
+  <body>
     <div id="viewDiv"></div>
     <div id="messageDiv" class="esri-widget esri-heading">
       <h4 class="esri-heading">Velg en kommune</h4>
     </div>
     <div id="akViewDiv" class="esri-widget"></div>
+    <div id="kommunenavn"></div>
+    <div id="kommune_id"></div>
 
-    <script src="https://js.arcgis.com/4.19/"></script>
+    <!-- <img src="" id="image" /> -->
+
+    <calcite-action-bar id="actionbar" intl-collapse="test" position="end">
+      <calcite-action text="Information" icon="information"></calcite-action>
+      <calcite-action
+        text="Feedback"
+        slot="bottom-actions"
+        icon="mega-phone"
+      ></calcite-action>
+    </calcite-action-bar>
+
+    <div id="card_container" style="width: 280px">
+      <calcite-card>
+        <img src="" id="image" />
+        <span id="card_title" slot="title">Card title</span
+        ><span slot="subtitle"
+          >by &nbsp;<calcite-link href>username</calcite-link></span
+        >
+        <div id="cardDemografi">
+          Created: Jan 1, 2020<br />Updated: Feb 2, 2021<br />View Count: 0
+        </div>
+
+        <div>
+          <canvas id="bar-chart" width="80" height="45"></canvas>
+        </div>
+
+        <calcite-button
+          slot="footer-leading"
+          color="light"
+          scale="s"
+          icon-start="circle"
+        >
+        </calcite-button>
+        <div slot="footer-trailing">
+          <calcite-button
+            scale="s"
+            color="light"
+            id="card-icon-test-2"
+            icon-start="circle"
+          >
+          </calcite-button>
+          <calcite-button
+            scale="s"
+            color="light"
+            id="card-icon-test-1"
+            icon-start="circle"
+          >
+          </calcite-button>
+          <calcite-dropdown scale="s">
+            <calcite-button
+              id="card-icon-test-5"
+              slot="dropdown-trigger"
+              scale="s"
+              color="light"
+              icon-start="circle"
+            ></calcite-button>
+            <calcite-dropdown-group selection-mode="none">
+              <calcite-dropdown-item>View details</calcite-dropdown-item>
+              <calcite-dropdown-item>Duplicate</calcite-dropdown-item>
+              <calcite-dropdown-item>Delete</calcite-dropdown-item>
+            </calcite-dropdown-group>
+          </calcite-dropdown>
+        </div>
+      </calcite-card>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://js.arcgis.com/4.20/"></script>
 
     <script type="text/javascript" src="main.js"></script>
 
+    <script
+      type="module"
+      src="https://js.arcgis.com/calcite-components/1.0.0-beta.52/calcite.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://js.arcgis.com/calcite-components/1.0.0-beta.52/calcite.js"
+    ></script>
+
+    <script type="text/javascript" src="modules/befPunkt.js"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
